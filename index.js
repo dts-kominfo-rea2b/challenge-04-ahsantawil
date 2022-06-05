@@ -8,7 +8,14 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (dates, input) => {
+  if (input === undefined) {
+    const newDates = dates.map((e) => Date.parse(e) / 1000);
+    return newDates.sort().join("-");
+  }
+
+  return (Date.parse(dates[input]) / 1000).toString();
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
